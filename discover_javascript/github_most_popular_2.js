@@ -11,15 +11,10 @@ var options = {
 
 
 var callback1 = function(res) { 
-  streamToString(res, printToConsole  );
+  streamToString(res, longString  );
 }
 
 var req = https.request( options,callback1 );
-
-var printToConsole =  function(anything) {
-   console.log("string");
-   console.log(anything);
-}
 
 function streamToString(stream, cb) {
  const chunks = [];
@@ -36,3 +31,8 @@ req.end();
 req.on('error', function(e) {
  console.error(e);
 });
+
+var longString = function(jsonString){                   
+   console.log(typeof jsonString);
+   console.log(jsonString);
+}

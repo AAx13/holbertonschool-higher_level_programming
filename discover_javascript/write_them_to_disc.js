@@ -11,15 +11,18 @@ var options = {
 
 
 var callback1 = function(res) { 
-  streamToString(res, printToConsole  );
-}
+  streamToString(res, fs  ) => 
+    fs.writeFile("/tmp/16", function(err) {
+      if (err) {
+          return console.log(err);
+      }
+
+      console.log("The file was saved!");
+});
+
 
 var req = https.request( options,callback1 );
 
-var printToConsole =  function(anything) {
-   console.log("string");
-   console.log(anything);
-}
 
 function streamToString(stream, cb) {
  const chunks = [];
@@ -36,3 +39,4 @@ req.end();
 req.on('error', function(e) {
  console.error(e);
 });
+

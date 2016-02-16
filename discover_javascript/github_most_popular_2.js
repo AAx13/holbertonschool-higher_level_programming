@@ -16,9 +16,9 @@ var callback1 = function(res) {
 
 var req = https.request( options,callback1 );
 
-var printToConsole =  function(x) {
+var printToConsole =  function(anything) {
    console.log("string");
-   console.log(x);
+   console.log(anything);
 }
 
 function streamToString(stream, cb) {
@@ -27,7 +27,7 @@ function streamToString(stream, cb) {
    chunks.push(chunk);
  });
  stream.on('end', () => {
-   cb(    chunks.join('')    );
+   cb(chunks.join(''));
  });
 }
 

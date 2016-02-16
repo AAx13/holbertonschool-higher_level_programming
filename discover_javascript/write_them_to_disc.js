@@ -9,20 +9,11 @@ var options = {
     }
 }
 
-
 var callback1 = function(res) { 
-  streamToString(res, fs  ) => 
-    fs.writeFile("/tmp/16", function(err) {
-      if (err) {
-          return console.log(err);
-      }
-
-      console.log("The file was saved!");
-});
-
+  streamToString(res, write  );
+}
 
 var req = https.request( options,callback1 );
-
 
 function streamToString(stream, cb) {
  const chunks = [];
@@ -34,9 +25,25 @@ function streamToString(stream, cb) {
  });
 }
 
+var write = function(jsonString){
+var fs = require('fs');
+fs.writeFile("/tmp/16", jsonString, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+}); 
+}
+
 req.end();
 
 req.on('error', function(e) {
  console.error(e);
 });
+
+var longString = function(jsonString){                   
+   console.log(typeof jsonString);
+   console.log(jsonString);
+}
 

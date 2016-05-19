@@ -3,7 +3,7 @@ import math
 class Circle():
 
     def __init__(self, radius):
-        self.radius = radius
+        self.__radius = radius
 
     def set_color(self, yellow):
         self.__color = yellow

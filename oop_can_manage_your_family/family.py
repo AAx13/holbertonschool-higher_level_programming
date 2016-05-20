@@ -52,24 +52,27 @@ class Person():
         return self.__first_name + ' ' + self.last_name
 
     def is_male(self):
-        if Person[3] == "Male":
-            return True
+        if Person[3] != "Male":
+            return False
 
     # age portion with comparitors
+    # 05/20/2016
     def age(self):
-        birthday = date(self.__date_of_birth[2], self.__date_of_birth[0], self.__date_of_birth[1])
-        today = date(2016, 05, 20)
-        age = date(2000, 02, 02)
-        if today.year > birthday.year:
-            age[0] = today.year - birthday.year - 1
-        if today.month < birthday.month and today.month + birthday.month <= 12:
-            age[1] = today.month + birthday.month
-        else:
-            age[1] = birthday.month - today.month
-        if today.day < birthday.day and today.day + birthday.day <= 31:
-            age[2] = today.day + birthday.day
-        else:
-            age[2] = birthday.day - today.day
+        return 2016 - self.__date_of_birth[2] - 1
 
-        if today > birthday:
-            return today - birthday - 1
+
+    # comparitor overload
+    def __gt__(self, other):
+        return self.age() > other.age()
+
+    def __ge__(self, other):
+        return self >= other
+
+    def __lt__(self, other):
+        return self < other
+
+    def __le__(self, other):
+        return self <= other
+
+    def __eq__(self, other):
+        return self == other

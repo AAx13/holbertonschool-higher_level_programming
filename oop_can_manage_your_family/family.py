@@ -32,6 +32,25 @@ class Person():
         self.__genre = genre
         self.__eyes_color = eyes_color
 
+        # task 3
+        # declaring a dictionary
+    def json(self):
+        if not isinstance(json, dict):
+            raise Exception("json is not valid")
+        family_dict = {'id': self.__id,
+        'first_name': self.__first_name,
+        'date_of_birth': self.__date_of_birth,
+        'genre': self.__genre,
+        'eyes_color': self.__eyes_color}
+        return family_dict
+
+    def load_from_json(self, json):
+        self.__id = json['id']
+        self.__first_name = json['first_name']
+        self.__date_of_birth = json['date_of_birth']
+        self.__genre = json['genre']
+        self.__eyes_color = json['eyes_color']
+
     # geta
     def get_id(self):
         return self.__id
@@ -127,24 +146,6 @@ class Senior(Person):
     def can_vote(self):
         return True
 
-# task 3
-# declaring a dictionary
-def json(self):
-    if not isinstance(json, dict):
-        raise Exception("json is not valid")
-    family_dict = {'id': self.__id,
-    'first_name': self.__first_name,
-    'date_of_birth': self.__date_of_birth,
-    'genre': self.__genre,
-    'eyes_color': self.__eyes_color}
-    return family_dict
-
-def load_from_json(self, json):
-    self.__id = json['id']
-    self.__first_name = json['first_name']
-    self.__date_of_birth = json['date_of_birth']
-    self.__genre = json['genre']
-    self.__eyes_color = json['eyes_color']
 
 def save_to_file(list, filename):
     if not isinstance(filename, str) or not os.path.isfile(filename):

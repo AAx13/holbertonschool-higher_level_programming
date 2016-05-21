@@ -1,4 +1,5 @@
-
+import os.path
+import json
 
 class Person():
 
@@ -58,8 +59,8 @@ class Person():
     # age portion with comparitors
     # 05/20/2016
     def age(self):
-        return 2016 - self.__date_of_birth[2] - 1
-
+        if self.__date_of_birth[0] > 5:
+            return 2016 - self.__date_of_birth[2] - 1
 
     # comparitor overload
     def __gt__(self, other):
@@ -131,12 +132,12 @@ class Senior(Person):
 def json(self):
     if not isinstance(json, dict):
         raise Exception("json is not valid")
-    dic = {'id': self.__id,
+    family_dict = {'id': self.__id,
     'first_name': self.__first_name,
     'date_of_birth': self.__date_of_birth,
     'genre': self.__genre,
     'eyes_color': self.__eyes_color}
-    return dic
+    return family_dict
 
 def load_from_json(self, json):
     self.__id = json['id']
@@ -146,4 +147,16 @@ def load_from_json(self, json):
     self.__eyes_color = json['eyes_color']
 
 def save_to_file(list, filename):
-    
+    if not isinstance(filename, str) or not os.path.isfile(filename):
+        raise Exception("filename is not valid or doesn't exist")
+    else:
+        with open(filename, 'w') as outfile:
+            json.dump(list, outfile)
+
+def load_from_file(filename):
+    if not isinstance(filename, str) or not os.path.isfile(filename):
+        raise Exception("filename is not valid or doesn't exist")
+    else:
+        with open(filename) as json_data:
+            data = json.load(json_data)
+            return data

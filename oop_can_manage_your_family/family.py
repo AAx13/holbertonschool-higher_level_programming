@@ -1,4 +1,4 @@
-from datetime import date
+
 
 class Person():
 
@@ -76,3 +76,52 @@ class Person():
 
     def __eq__(self, other):
         return self == other
+
+
+# task 2 declaring methods to be overloaded by individual child classes.
+    def can_run(self):
+        return False
+
+    def need_help(self):
+        return False
+
+    def is_young(self):
+        return False
+
+    def can_vote(self):
+        return False
+
+
+# can_run(self) => return True if the Class is Teenager or Adult
+# need_help(self) => return True if the Class is Baby or Senior
+# is_young(self) => return True if the Class is Baby or Teenager
+# can_vote(self) => return True if the Class is Adult or Senior
+
+# task 2 new classes to inherit Person class
+class Baby(Person):
+    def need_help(self):
+        return True
+
+    def is_young(self):
+        return True
+
+class Teenager(Person):
+    def can_run(self):
+        return True
+
+    def is_young(self):
+        return True
+
+class Adult(Person):
+    def can_run(self):
+        return True
+
+    def can_vote(self):
+        return True
+
+class Senior(Person):
+    def need_help(self):
+        return True
+
+    def can_vote(self):
+        return True

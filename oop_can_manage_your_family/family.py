@@ -45,17 +45,18 @@ class Person():
         'date_of_birth': self.__date_of_birth,
         'genre': self.__genre,
         'eyes_color': self.__eyes_color}
+        
 
     '''Ensure data loaded from JSON is formatted correctly'''
     def load_from_json(self, json):
         if not isinstance(json, dict):
             raise Exception("json is not valid")
-        self.__class__.__name__ = json['kind']
         self.__id = json['id']
         self.__first_name = json['first_name']
         self.__date_of_birth = json['date_of_birth']
         self.__genre = json['genre']
         self.__eyes_color = json['eyes_color']
+
 
     '''Declaring a get method for all private Person attributes'''
     def get_id(self):
@@ -177,8 +178,11 @@ def save_to_file(list, filename):
     if not isinstance(filename, str) or not os.path.isfile(filename):
         raise Exception("filename is not valid or doesn't exist")
     else:
-        with open(filename, 'w') as outfile:
-            json.dump(list, outfile)
+        list_json = []
+    for i in list:
+        list_json.append(i.json())
+    with open(filename, 'w') as outfile:
+        json.dump(list_json, outfile)
 
 
 def load_from_file(filename):
@@ -188,3 +192,18 @@ def load_from_file(filename):
         with open(filename) as json_data:
             data = json.load(json_data)
             return data
+            list = []
+            for i in data:
+                if i['kind'] == "Baby":
+                    x = Baby(1, "X", [1, 1, 1111], "X", "X")
+                if i['kind'] == "Senior":
+                    x = Senior(1, "X", [1, 1, 1111], "X", "X")
+                if i['kind'] == "Teenager":
+                    x = Teenager(1, "X", [1, 1, 1111], "X", "X")
+                if i['kind'] == "Adult":
+                    x = Adult(1, "X", [1, 1, 1111], "X", "X")
+            else:
+                x = Person(1, "X", [1, 1, 1111], "X", "X")
+                x.load_from_json(i)
+                list.append(x)
+            return list

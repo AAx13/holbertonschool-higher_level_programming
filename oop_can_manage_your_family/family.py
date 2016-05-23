@@ -3,11 +3,11 @@ import json
 
 class Person():
 
-    # class attributes
+    '''Class Attributes'''
     EYES_COLORS = ["Blue", "Green", "Brown"]
     GENRES = ["Female", "Male"]
 
-    # constructor
+    '''Constructor'''
     def __init__(self, id, first_name, date_of_birth, genre, eyes_color):
 
         if id < 0 or not isinstance(id, int):
@@ -25,33 +25,39 @@ class Person():
         if not isinstance(eyes_color, str) and eyes_color not in self.EYES_COLORS:
                 raise Exception("eyes_color is not valid")
 
-    # declaring all the private attributes
+        '''Declaring all the private attributes'''
         self.__id = id
         self.__first_name = first_name
         self.__date_of_birth = date_of_birth
         self.__genre = genre
         self.__eyes_color = eyes_color
 
-        # task 3
-        # declaring a dictionary
+        # task 4
+        '''Declaring public attribute'''
+
+
+    # task 3
+    '''Declaring a dictionary'''
     def json(self):
-        if not isinstance(json, dict):
-            raise Exception("json is not valid")
-        family_dict = {'id': self.__id,
+        return {'kind': self.__class__.__name__,
+        'id': self.__id,
         'first_name': self.__first_name,
         'date_of_birth': self.__date_of_birth,
         'genre': self.__genre,
         'eyes_color': self.__eyes_color}
-        return family_dict
 
+    '''Ensure data loaded from JSON is formatted correctly'''
     def load_from_json(self, json):
+        if not isinstance(json, dict):
+            raise Exception("json is not valid")
+        self.__class__.__name__ = json['kind']
         self.__id = json['id']
         self.__first_name = json['first_name']
         self.__date_of_birth = json['date_of_birth']
         self.__genre = json['genre']
         self.__eyes_color = json['eyes_color']
 
-    # geta
+    '''Declaring a get method for all private Person attributes'''
     def get_id(self):
         return self.__id
 
@@ -67,21 +73,22 @@ class Person():
     def get_eyes_color(self):
         return self.__eyes_color
 
-    # start of task 1 base class description
+    '''Start of task 1 base class description'''
     def __str__(self):
         return self.__first_name + ' ' + self.last_name
 
+    '''Check if attribute 'genre' is male or not'''
     def is_male(self):
-        if Person[3] != "Male":
+        if self.__genre is not "Male":
             return False
 
-    # age portion with comparitors
     # 05/20/2016
+    '''Comparing the date_of_birth to 05/20/2016 to find out the Person age'''
     def age(self):
         if self.__date_of_birth[0] > 5:
             return 2016 - self.__date_of_birth[2] - 1
 
-    # comparitor overload
+    '''Comparitor Overloading'''
     def __gt__(self, other):
         return self.age() > other.age()
 
@@ -98,7 +105,7 @@ class Person():
         return self == other
 
 
-# task 2 declaring methods to be overloaded by individual child classes.
+    '''Task 2: declaring methods to be overloaded by individual child classes'''
     def can_run(self):
         return False
 
@@ -111,13 +118,26 @@ class Person():
     def can_vote(self):
         return False
 
+    '''Marriage methods'''
+    def can_be_married(self):
+        return False
+
+    def is_married(self):
+        return False
+
+    def divorce(self, p):
+        return False
+
+    def just_married_with(self, p):
+        return False
+
 
 # can_run(self) => return True if the Class is Teenager or Adult
 # need_help(self) => return True if the Class is Baby or Senior
 # is_young(self) => return True if the Class is Baby or Teenager
 # can_vote(self) => return True if the Class is Adult or Senior
 
-# task 2 new classes to inherit Person class
+'''Task 2: new classes to inherit Person class'''
 class Baby(Person):
     def need_help(self):
         return True
@@ -139,11 +159,17 @@ class Adult(Person):
     def can_vote(self):
         return True
 
+    def can_be_married(self):
+        return True
+
 class Senior(Person):
     def need_help(self):
         return True
 
     def can_vote(self):
+        return True
+
+    def can_be_married(self):
         return True
 
 
@@ -153,6 +179,7 @@ def save_to_file(list, filename):
     else:
         with open(filename, 'w') as outfile:
             json.dump(list, outfile)
+
 
 def load_from_file(filename):
     if not isinstance(filename, str) or not os.path.isfile(filename):

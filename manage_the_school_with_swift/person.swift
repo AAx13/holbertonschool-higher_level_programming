@@ -87,5 +87,42 @@ class School {
         }
         return false
     }
+    
+    // This function will return students in the school sorted by age (task 4)
+    func listStudents() -> [Person] {
+        var list_students: [Person] = []
+        for i in list_persons {
+            if i is Student {
+                list_students.append(i)
+            }
+        }
+        return list_students.sort({$0.age > $1.age})
+    }
+    
+    // This function will return mentors in the school sorted by age (task 4)
+    func listMentors() -> [Person] {
+        var list_mentors: [Person] = []
+        for i in list_persons {
+            if i is Mentor {
+                list_mentors.append(i)
+            }
+        }
+        return list_mentors.sort({$0.age > $1.age})
+    }
+    
+    // This function will return list of mentors FILTERED by subjects and in order from oldest to youngest
+    func listMentorsBySubject(subject: Subject) -> [Person] {
+        var mentors: [Person] = []
+        for person in list_persons {
+            if person is Mentor {
+                if let mentor = person as? Mentor {
+                    if mentor.subject == subject {
+                        mentors.append(mentor)
+                    }
+                }
+            }
+        }
+        return mentors.sort({$0.age > $1.age})
+    }
 }
 

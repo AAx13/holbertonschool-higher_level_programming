@@ -17,18 +17,39 @@ class Person {
     func fullName() -> String {
         return self.first_name + " " + self.last_name
     }
-    
 }
 
+// Created protocol to be used with Mentor and Student to return if the Student or Mentor are students (task 1)
 protocol Classify {
     func isStudent() -> Bool
+}
+
+// Created enum to describe what Mentor will be teaching (task 2)
+enum Subject {
+    case Math
+    case English
+    case French
+    case History
 }
 
 // Defined two new sub-classes with the super class being Person (task 0)
 // Implementation of the isStudent protocol within the subclass Mentor (task 1)
 class Mentor: Person, Classify {
+    // Declaring constant subject (task 2)
+    let subject: Subject
+    
+    // Overloaded constructor (task 2)
+    init(first_name: String, last_name: String, age: Int, subject: Subject = Subject.Math) {
+        self.subject = subject
+        super.init(first_name: first_name, last_name: last_name, age: age)
+    }
+    
     func isStudent() -> Bool {
         return false
+    }
+    // This function will return a String that relates to the subject a mentor is teaching (task 2)
+    func stringSubject() -> String {
+        return String(self.subject)
     }
 }
 

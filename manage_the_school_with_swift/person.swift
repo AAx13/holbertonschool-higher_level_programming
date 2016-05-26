@@ -1,7 +1,7 @@
 
 
 class Person {
-    // declaring all public attributes (task 0)
+    // Declaring all public attributes (task 0)
     var first_name: String
     var last_name: String
     var age: Int
@@ -57,6 +57,35 @@ class Mentor: Person, Classify {
 class Student: Person, Classify {
     func isStudent() -> Bool {
         return true
+    }
+}
+
+class School {
+    // Declaring constructor for name (task 3)
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    
+    // Declaring a public attribute: an array of Person (task 3)
+    var list_persons: [Person!] = []
+
+    // This function will add to the attribute list_persons only if its a Student (task 3)
+    func addStudent(p: Person) -> Bool {
+        if p is Student {
+            list_persons.append(p)
+            return true
+        }
+        return false
+    }
+    
+    // This function will add to the attribute list_persons only if its a Mentor (task 3)
+    func addMentor(p: Person) -> Bool {
+        if p is Mentor {
+            list_persons.append(p)
+            return true
+        }
+        return false
     }
 }
 

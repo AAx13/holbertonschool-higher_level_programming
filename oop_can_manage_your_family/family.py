@@ -45,7 +45,7 @@ class Person():
         'date_of_birth': self.__date_of_birth,
         'genre': self.__genre,
         'eyes_color': self.__eyes_color}
-        
+
 
     '''Ensure data loaded from JSON is formatted correctly'''
     def load_from_json(self, json):
@@ -191,7 +191,6 @@ def load_from_file(filename):
     else:
         with open(filename) as json_data:
             data = json.load(json_data)
-            return data
             list = []
             for i in data:
                 if i['kind'] == "Baby":
@@ -202,8 +201,8 @@ def load_from_file(filename):
                     x = Teenager(1, "X", [1, 1, 1111], "X", "X")
                 if i['kind'] == "Adult":
                     x = Adult(1, "X", [1, 1, 1111], "X", "X")
-            else:
-                x = Person(1, "X", [1, 1, 1111], "X", "X")
+                else:
+                    x = Person(1, "X", [1, 1, 1111], "X", "X")
                 x.load_from_json(i)
                 list.append(x)
             return list

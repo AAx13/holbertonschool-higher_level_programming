@@ -9,4 +9,7 @@ b = Baby(3, "Tony", [7, 4, 2015], "Male", "Green")
 b.last_name = "Foto"
 my_family.append(b)
 
+for p in my_family:
+    print type(p)
+    
 save_to_file(my_family, "my_family.json")

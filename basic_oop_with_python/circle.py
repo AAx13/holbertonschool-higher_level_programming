@@ -25,3 +25,6 @@ class Circle():
 
     def area(self):
         return self.__radius * self.__radius * math.pi
+
+    def intersection(self, c_bis):
+            

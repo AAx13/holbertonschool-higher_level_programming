@@ -4,7 +4,7 @@ class TaskModel:
     ''' Constructor '''
     def __init__(self, title):
 
-        if not isinstance(title, str):
+        if not isinstance(title, str) or title == "":
             raise Exception("title is not a string")
 
         self.__title = title

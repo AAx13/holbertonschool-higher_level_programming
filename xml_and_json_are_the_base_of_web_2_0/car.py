@@ -42,3 +42,7 @@ class Car:
     ''' Overloading a printed string to the following format '''
     def __str__(self):
         return "%s %s (%s)" % (self.__name, self.__brand, self.__nb_doors)
+
+    ''' Update nb_doors '''
+    def set_nb_doors(self, number):
+        self.__nb_doors = number

@@ -1,4 +1,5 @@
-
+import json
+from xml.dom import minidom
 
 class Car:
 
@@ -46,3 +47,23 @@ class Car:
     ''' Update nb_doors '''
     def set_nb_doors(self, number):
         self.__nb_doors = number
+
+    ''' Return a string in JSON format '''
+    def to_json_string(self):
+        return json.dumps(self.to_hash())
+
+    ''' Create an XML document '''
+    def to_xml_node(self, doc):
+        car = doc.createElement('car')
+        car.setAttribute('nb_doors', str(self.__nb_doors))
+
+        name = doc.createElement('name')
+        name_content = doc.createCDATASection(self.__name)
+        name.appendChild(name_content)
+        car.appendChild(name)
+
+        brand = doc.createElement('brand')
+        brand_content = doc.createTextNode(self.__brand)
+        brand.appendChild(brand_content)
+        car.appendChild(brand)
+        return car

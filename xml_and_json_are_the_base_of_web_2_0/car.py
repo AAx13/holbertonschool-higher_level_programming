@@ -6,6 +6,7 @@ class Car:
     ''' Constructor '''
     def __init__(self, *args, **kwargs):
 
+        ''' Expand args or kwargs and pass values to correct locations/keys '''
         if len(args) > 0 and isinstance(args[0], dict):
             hash = args[0]
             name = hash.get('name')

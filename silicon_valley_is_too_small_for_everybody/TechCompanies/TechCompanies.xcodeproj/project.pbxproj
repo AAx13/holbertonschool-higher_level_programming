@@ -13,6 +13,7 @@
 		C5527DF21D0895B30094A01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5527DF11D0895B30094A01A /* Assets.xcassets */; };
 		C5527DF51D0895B30094A01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5527DF31D0895B30094A01A /* LaunchScreen.storyboard */; };
 		C5527DFE1D0896160094A01A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5527DFD1D0896160094A01A /* Entity.swift */; };
+		C5527E001D089A2C0094A01A /* EntitiesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5527DFF1D089A2C0094A01A /* EntitiesHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C5527DF41D0895B30094A01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5527DF61D0895B30094A01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5527DFD1D0896160094A01A /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		C5527DFF1D089A2C0094A01A /* EntitiesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				C5527DFD1D0896160094A01A /* Entity.swift */,
+				C5527DFF1D089A2C0094A01A /* EntitiesHelper.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5527E001D089A2C0094A01A /* EntitiesHelper.swift in Sources */,
 				C5527DED1D0895B30094A01A /* ViewController.swift in Sources */,
 				C5527DEB1D0895B30094A01A /* AppDelegate.swift in Sources */,
 				C5527DFE1D0896160094A01A /* Entity.swift in Sources */,

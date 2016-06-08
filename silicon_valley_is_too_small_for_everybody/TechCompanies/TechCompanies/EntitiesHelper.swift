@@ -10,9 +10,11 @@ import Foundation
 
 class EntitiesHelper {
     
+    // Declare two static variables to hold list of school and list of tech company
     static var listOfSchool:[Entity]! = []
     static var listOfTechCompany:[Entity]! = []
     
+    // Declare static function to get list of schools and return them
     static func getSchools() -> [Entity]! {
         
         if listOfSchool.isEmpty {
@@ -22,6 +24,7 @@ class EntitiesHelper {
         return listOfSchool
     }
     
+    // Declare static function to get list of tech companies and return them
     static func getTechCompanies() -> [Entity]! {
         
         if listOfTechCompany.isEmpty {

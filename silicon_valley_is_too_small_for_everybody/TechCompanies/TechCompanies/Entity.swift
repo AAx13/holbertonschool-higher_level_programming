@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Declaring an enum
 enum EntityType:String {
     case None
     case School
@@ -16,11 +17,13 @@ enum EntityType:String {
 
 class Entity {
     
+    // Declaring private attributes
     private var name:String
     private var town:String
     private var imageName:String
     private var type:EntityType
     
+    // Initializing
     init (name:String, town:String, imageName:String, type:EntityType = .None) {
         
         self.name = name

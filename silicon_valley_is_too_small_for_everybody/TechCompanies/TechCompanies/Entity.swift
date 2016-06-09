@@ -18,10 +18,10 @@ enum EntityType:String {
 class Entity {
     
     // Declaring private attributes
-    private var name:String
-    private var town:String
-    private var imageName:String
-    private var type:EntityType
+    private (set) var name:String
+    private (set) var town:String
+    private (set) var imageName:String
+    private (set) var type:EntityType
     
     // Initializing
     init (name:String, town:String, imageName:String, type:EntityType = .None) {

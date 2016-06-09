@@ -9,9 +9,17 @@
 import UIKit
 
 class TechCompaniesListViewController: UITableViewController {
+    
+    // Declare two attributes to store school list as well as tech company list
+    var schoolList:[Entity]!
+    var techCompanyList:[Entity]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Entity list"
+        techCompanyList = EntitiesHelper.getTechCompanies()
+        schoolList = EntitiesHelper.getSchools()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +37,47 @@ class TechCompaniesListViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if section == 0 {
+            return schoolList.count
+        }
+        else if section == 1 {
+            return techCompanyList.count
+        }
         return 0
     }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Schools"
+        }
+        else if section == 1 {
+            return "Tech Companies"
+        }
+        return nil
+    }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("techCell", forIndexPath: indexPath)
         // Configure the cell...
-
+        if indexPath.section == 0 {
+            cell.textLabel?.text = schoolList[indexPath.row].name
+            cell.detailTextLabel?.text = "I love studying"
+        }
+        
+        if indexPath.section == 1 {
+            cell.textLabel?.text = techCompanyList[indexPath.row].name
+            cell.detailTextLabel?.text = "I love working"
+        }
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -13,6 +13,7 @@ class TechCompaniesListViewController: UITableViewController {
     // Declare two attributes to store school list as well as tech company list
     var schoolList:[Entity]!
     var techCompanyList:[Entity]!
+    let techDetailSegue = "techDetailSegue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,20 @@ class TechCompaniesListViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == techDetailSegue {
+            let techDetailViewController = segue.destinationViewController as? TechCompanyDetailViewController
+            let section = self.tableView.indexPathForSelectedRow?.section
+            let row = self.tableView.indexPathForSelectedRow?.row
+            var list = (section == 0 ? schoolList: techCompanyList)
+            techDetailViewController!.entity = list[row!]
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -114,14 +129,5 @@ class TechCompaniesListViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

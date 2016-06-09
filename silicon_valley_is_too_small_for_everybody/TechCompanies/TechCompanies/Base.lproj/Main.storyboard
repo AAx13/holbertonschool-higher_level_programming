@@ -37,6 +37,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8fh-Rl-Aon" kind="show" identifier="techDetailSegue" id="2eW-Jv-Swt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,7 +51,54 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bb4-O0-nL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="470"/>
+            <point key="canvasLocation" x="214" y="470"/>
+        </scene>
+        <!--Tech Company Detail View Controller-->
+        <scene sceneID="Zu3-EJ-Dde">
+            <objects>
+                <viewController id="8fh-Rl-Aon" customClass="TechCompanyDetailViewController" customModule="TechCompanies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ufe-Eo-yne"/>
+                        <viewControllerLayoutGuide type="bottom" id="JyW-Er-b0X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YaZ-Kt-Eak">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3u-Bw-gWo" userLabel="label_entity">
+                                <rect key="frame" x="0.0" y="40" width="600" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Tcc-8J-lOA"/>
+                                    <constraint firstAttribute="width" constant="600" id="VNi-Wa-M0J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKa-u7-dff" userLabel="image_entity">
+                                <rect key="frame" x="200" y="380" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Dba-eb-Uvj"/>
+                                    <constraint firstAttribute="height" constant="200" id="zrc-AI-Xn9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WKa-u7-dff" firstAttribute="centerX" secondItem="YaZ-Kt-Eak" secondAttribute="centerX" id="KxR-aJ-HhJ"/>
+                            <constraint firstItem="JyW-Er-b0X" firstAttribute="top" secondItem="WKa-u7-dff" secondAttribute="bottom" constant="20" id="YnN-Vf-Id9"/>
+                            <constraint firstItem="j3u-Bw-gWo" firstAttribute="top" secondItem="ufe-Eo-yne" secondAttribute="bottom" constant="20" id="loP-0t-6aA"/>
+                            <constraint firstItem="j3u-Bw-gWo" firstAttribute="centerX" secondItem="YaZ-Kt-Eak" secondAttribute="centerX" id="nqB-FM-2qi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image_entity" destination="WKa-u7-dff" id="kZM-t4-3tM"/>
+                        <outlet property="label_entity" destination="j3u-Bw-gWo" id="8JH-xQ-j6K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogL-98-qYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="470"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5pQ-Qr-FGl">

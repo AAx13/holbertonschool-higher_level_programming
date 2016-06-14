@@ -5,7 +5,7 @@ from models import *
 
 my_models_db.connect()
 
-args = ['create', 'print', 'insert', 'delete']
+args = ['create', 'print', 'insert', 'delete', 'print_batch_by_school', 'print_student_by_batch']
 
 def create_tables():
     my_models_db.create_tables([School, Batch, User, Student])
@@ -93,8 +93,24 @@ def delete():
                     pass
                     print "Nothing to delete"
 
+def batch_by_school():
+    if len(sys.argv) < 3:
+        print "Format: print_batch_by_school <school id>"
+
+def student_by_batch():
+    if len(sys.argv) < 3:
+        print "Format: print_student_by_batch <batch id>"
+
+
+'''
+the second argument of your program should be a batch id
+if your database doesn't contains a Batch with the batch id, your program should print Batch not found
+your program should fetch from the DB all Student objects attached to this batch
+print the list one object per line
+'''
+
 if len(sys.argv) < 2:
-    print "Please enter an action"
+    print "Please enter an action: [Options: create, print, insert, delete, print_batch_by_school, print_student_by_batch]"
 elif sys.argv[1] not in args:
     print "Undefined action %s" % sys.argv[1]
 else:
@@ -106,11 +122,7 @@ else:
         insert()
     elif sys.argv[1] == 'delete':
         delete()
-
-
-'''
-the second argument of your program should be the model name in lowercase
-the third arguments should be the id of the object to delete
-if in your database you don't have any object with this id, your program should print Nothing to delete
-otherwise, the object will be deleted and your program should print Delete: <object to delete>
-'''
+    elif sys.argv[1] == 'print_batch_by_school':
+        batch_by_school()
+    elif sys.argv[1] == 'print_student_by_batch':
+        student_by_batch()

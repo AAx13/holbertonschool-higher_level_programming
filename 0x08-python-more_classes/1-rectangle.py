@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+''' class Rectangle - with parameters width(int) and height(int) '''
+
+
 class Rectangle():
 
     def __init__(self, width=0, height=0):

@@ -5,6 +5,8 @@
 This module will raise TypeError if paramaters are not
 of type int, and will raise ValueError if less than 0.
 
+__str__() - Returns visual representation of a Rectangle()
+based on height and width dimensions.
 area() - Returns the rectangle area.
 perimeter() - Returns the rectangle perimeter.
 '''

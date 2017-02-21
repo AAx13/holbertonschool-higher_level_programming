@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' class Rectangle - with parameters width(int) and height(int) '''
+''' class Rectangle - Parameters(2): width(int) height(int) '''
 
 
 class Rectangle():
@@ -22,7 +22,8 @@ class Rectangle():
         if isinstance(value, int):
             if value < 0:
                 raise ValueError('width must be >= 0')
-            self.__width = value
+            else:
+                self.__width = value
         else:
             raise TypeError('width must be an integer')
 

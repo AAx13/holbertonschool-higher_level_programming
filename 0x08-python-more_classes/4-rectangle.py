@@ -7,6 +7,8 @@ of type int, and will raise ValueError if less than 0.
 
 __str__() - Returns visual representation of a Rectangle()
 based on height and width dimensions.
+__repr__() - Returns string representation of the rectangle
+to be able to recreate a new instance by using eval().
 area() - Returns the rectangle area.
 perimeter() - Returns the rectangle perimeter.
 '''
@@ -28,6 +30,10 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return ''
         return(('#' * self.__width + '\n') * self.__height).strip()
+
+    def __repr__(self):
+        ''' Overload __repr__ to return string. '''
+        return("Rectangle(%d, %d)" % (self.__width, self.__height))
 
     @property
     def width(self):

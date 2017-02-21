@@ -4,19 +4,28 @@
 
 This module will raise TypeError if paramaters are not
 of type int, and will raise ValueError if less than 0.
+
+area() - Returns the rectangle area.
+perimeter() - Returns the rectangle perimeter.
 '''
 
 
 class Rectangle():
     '''class Rectangle - Parameters(width(int), height(int))'''
 
+    __width = 0
+    __height = 0
+
     def __init__(self, width=0, height=0):
         ''' Constructor '''
         self.width = width
         self.height = height
 
-    __width = 0
-    __height = 0
+    def __str__(self):
+        ''' Overload __str__ to print rectangle. '''
+        if self.__width == 0 or self.__height == 0:
+            return ''
+        return(('#' * self.__width + '\n') * self.__height).strip()
 
     @property
     def width(self):
@@ -47,3 +56,13 @@ class Rectangle():
             self.__height = value
         else:
             raise TypeError('height must be an integer')
+
+    def area(self):
+        ''' Returns the rectangle area '''
+        return self.__width * self.__height
+
+    def perimeter(self):
+        ''' Returns the rectangle perimeter. '''
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width * 2) + (self.__height * 2)

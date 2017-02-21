@@ -10,14 +10,14 @@ of type int, and will raise ValueError if less than 0.
 class Rectangle():
     '''class Rectangle - Parameters(width(int), height(int))'''
 
+    __width = 0
+    __height = 0
+
     def __init__(self, width=0, height=0):
         ''' Constructor '''
 
         self.width = width
         self.height = height
-
-    __width = 0
-    __height = 0
 
     @property
     def width(self):

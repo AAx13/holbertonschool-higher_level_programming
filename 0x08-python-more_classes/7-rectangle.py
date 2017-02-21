@@ -18,9 +18,6 @@ perimeter() - Returns the rectangle perimeter.
 class Rectangle():
     '''class Rectangle - Parameters(width(int), height(int))'''
 
-    __width = 0
-    __height = 0
-
     number_of_instances = 0  # Count instances created and deleted
     print_symbol = '#'  # Symbol for string representation
 

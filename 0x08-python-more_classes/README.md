@@ -12,7 +12,7 @@
 * All your modules should have a documentation `(python3 -c               'print(__import__("my_module").__doc__)')`
 * All your classes should have a documentation `(python3 -c 'print(__import__("my_module").MyClass.__doc__)')`
 * All your functions (inside and outside a class) should have a documentation `(python3 -c 'print(__import__("my_module").my_function.__doc__)'` and `python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')`
-
+* You are not allowed to import any module
 
 ## Modules
 An empty class `Rectangle` that defines a rectangle.
@@ -21,3 +21,18 @@ An empty class `Rectangle` that defines a rectangle.
 [0-rectangle.py](../0x08-python-more_classes/0-rectangle.py)
 
 ***
+Write a class `Rectangle` that defines a rectangle by: (based on `0-rectangle.py`)
+
+* Private instance attribute: `width:`
+⋅⋅* Property `def width(self):` to retrieve it
+⋅⋅* Property setter `def width(self, value):` to set it:
+⋅⋅⋅* Width must be an integer, otherwise raise a TypeError exception with the message width must be an integer
+⋅⋅⋅* If width is less than 0, raise a ValueError exception with the message width must be >= 0
+* Private instance attribute: height:
+⋅⋅* Property def height(self): to retrieve it
+⋅⋅* Property setter def height(self, value): to set it:
+⋅⋅⋅* Height must be an integer, otherwise raise a TypeError exception with the message height must be an integer
+⋅⋅⋅* If height is less than 0, raise a ValueError exception with the message height must be >= 0
+* Instantiation with optional width and height: def __init__(self, width=0, height=0):
+
+[1-rectangle.py](../0x08-python-more_classes/1-rectangle.py)

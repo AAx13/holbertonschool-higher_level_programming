@@ -55,8 +55,16 @@ A class `Rectangle` that defines a rectangle by: (based on `1-rectangle.py`)
 
 ***
 A class `Rectangle` that defines a rectangle by: (based on `2-rectangle.py`)
+
 * `print()` and `str()` should print the rectangle with the character `#`:
 
         If width or height is equal to 0, return an empty string.
 
 [3-rectangle.py](../0x08-python-more_classes/3-rectangle.py)
+
+***
+A class `Rectangle` that defines a rectangle by: (based on `3-rectangle.py`)
+
+* `repr()` should return a string representation of the rectangle to be able to recreate a new instance by using `eval()`.
+
+[4-rectangle.py](../0x08-python-more_classes/4-rectangle.py)

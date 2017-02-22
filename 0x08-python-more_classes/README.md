@@ -68,3 +68,51 @@ A class `Rectangle` that defines a rectangle by: (based on `3-rectangle.py`)
 * `repr()` should return a string representation of the rectangle to be able to recreate a new instance by using `eval()`.
 
 [4-rectangle.py](../0x08-python-more_classes/4-rectangle.py)
+
+***
+A class `Rectangle` that defines a rectangle by: (based on `4-rectangle.py`).
+
+* Print the message "Bye rectangle..." when an instance of `Rectangle` is deleted.
+
+[5-rectangle.py](../0x08-python-more_classes/5-rectangle.py)
+
+***
+A class `Rectangle` that defines a rectangle by: (based on `5-rectangle.py`)
+
+* Public class attribute `number_of_instances`:
+
+        Initialized to 0.
+        Incremented during each new instance instantiation.
+        Decremented during each instance deletion.
+
+[6-rectangle.py](../0x08-python-more_classes/6-rectangle.py)
+
+***
+A class `Rectangle` that defines a rectangle by: (based on `6-rectangle.py`)
+
+* Public class attribute `print_symbol`:
+
+        Initialized to #.
+        Used as symbol for string representation.
+        Can be any type.
+
+[7-rectangle.py](../0x08-python-more_classes/7-rectangle.py)
+
+***
+A class `Rectangle` that defines a rectangle by: (based on `7-rectangle.py`)
+
+* Static method `def bigger_or_equal(rect_1, rect_2):` that returns the biggest rectangle:
+
+        rect_1 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_1 must be an instance of Rectangle.
+        rect_2 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_2 must be an instance of Rectangle.
+        Based on the area.
+        Returns rect_1 if both have the same area value.
+
+[8-rectangle.py](../0x08-python-more_classes/8-rectangle.py)
+
+***
+A class `Rectangle` that defines a rectangle by: (based on `8-rectangle.py`)
+
+* Class method `def square(cls, size=0):` that returns a new Rectangle instance with `width == height == size`.
+
+[9-rectangle.py](../0x08-python-more_classes/9-rectangle.py)

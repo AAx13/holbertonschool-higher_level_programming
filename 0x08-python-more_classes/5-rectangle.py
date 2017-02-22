@@ -27,7 +27,7 @@ class Rectangle():
         ''' Overload __str__ to print rectangle. '''
         if self.__width == 0 or self.__height == 0:
             return ''
-        b = ('#' * self.__width + '\n') * self.__height)
+        b = ('#' * self.__width + '\n') * self.__height
         return (b.strip('\n'))
 
     def __repr__(self):
@@ -49,7 +49,7 @@ class Rectangle():
         if isinstance(value, int):
             if value < 0:
                 raise ValueError('width must be >= 0')
-            self.__width=value
+            self.__width = value
         else:
             raise TypeError('width must be an integer')
 
@@ -64,7 +64,7 @@ class Rectangle():
         if isinstance(value, int):
             if value < 0:
                 raise ValueError('height must be >= 0')
-            self.__height=value
+            self.__height = value
         else:
             raise TypeError('height must be an integer')
 

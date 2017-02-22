@@ -1,14 +1,14 @@
 # More Classes and Objects Project
 
 ## Project Requirements
-* Allowed editors: vi, vim, emacs.
-* All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3).
+* Allowed editors: `vi`, `vim`, `emacs`.
+* All your files will be interpreted/compiled on Ubuntu 14.04 LTS using `python3` (version 3.4.3).
 * All your files should end with a new line.
-* The first line of all your files should be exactly #!/usr/bin/python3.
-* A README.md file, at the root of the folder of the project, is mandatory.
-* Your code should use the PEP 8 style.
+* The first line of all your files should be exactly `#!/usr/bin/python3`.
+* A `README.md` file, at the root of the folder of the project, is mandatory.
+* Your code should use the `PEP 8` style.
 * All your files must be executable.
-* The length of your files will be tested using wc.
+* The length of your files will be tested using `wc`.
 * All your modules should have a documentation `(python3 -c               'print(__import__("my_module").__doc__)')`
 * All your classes should have a documentation `(python3 -c 'print(__import__("my_module").MyClass.__doc__)')`
 * All your functions (inside and outside a class) should have a documentation `(python3 -c 'print(__import__("my_module").my_function.__doc__)'` and `python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')`
@@ -42,3 +42,12 @@ A class `Rectangle` that defines a rectangle by: (based on `0-rectangle.py`)
 * Instantiation with optional `width` and `height`: `def __init__(self, width=0, height=0):`
 
 [1-rectangle.py](../0x08-python-more_classes/1-rectangle.py)
+
+***
+A class Rectangle that defines a rectangle by: (based on `1-rectangle.py`)
+
+* Public instance method: `def area(self):` that returns the rectangle area.
+* Public instance method: `def perimeter(self):` that returns the rectangle perimeter:
+        if width or height is equal to 0, perimeter is equal to 0.
+
+[2-rectangle.py](../0x08-python-more_classes/2-rectangle.py)

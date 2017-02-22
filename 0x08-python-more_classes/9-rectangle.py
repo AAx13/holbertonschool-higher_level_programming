@@ -30,6 +30,11 @@ class Rectangle():
         self.height = height
         type(self).number_of_instances += 1
 
+    @classmethod
+    def square(cls, size=0):
+        ''' Class method that returns a rectangle of equal width and height '''
+        return (cls(size, size))
+
     def __str__(self):
         ''' Overload __str__ to print rectangle. '''
         if self.__width == 0 or self.__height == 0:
@@ -40,10 +45,8 @@ class Rectangle():
         return (b.strip('\n'))
 
     def __repr__(self):
-        # returning a value as a string that can be used to rebuild a object
-        # return 'Rectangle({},{})'.format(self.__width, self.__height)
-        return "Rectangle("\
-            + str(self.__width) + ", " + str(self.__height) + ")"
+        ''' Overload __repr__ to return string. '''
+        return("Rectangle(%d, %d)" % (self.__width, self.__height))
 
     def __del__(self):
         ''' On delete print confirmation. '''
@@ -92,11 +95,6 @@ class Rectangle():
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        ''' Class method that returns a rectangle of equal width and height '''
-        return (cls(size, size))
 
     def area(self):
         ''' Returns the rectangle area '''

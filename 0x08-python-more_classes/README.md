@@ -2,7 +2,6 @@
 
 ## Modules
 An empty class `Rectangle` that defines a rectangle.
-* You are not allowed to import any module
 
 [0-rectangle.py](../0x08-python-more_classes/0-rectangle.py)
 

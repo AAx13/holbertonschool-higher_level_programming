@@ -31,13 +31,17 @@ class Rectangle():
         type(self).number_of_instances += 1
 
     def __str__(self):
-        ''' Overload __str__ to print rectangle. '''
+        # Creating and returning a rectangle as a string
         if self.__width == 0 or self.__height == 0:
-            return ''
-        # Build a visual representation of the rectangle.
-        b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        # Return the rectangle after stripping the trailing newline.
-        return (b.strip('\n'))
+            return ("")
+
+        # calling class attribute to select the right symbol
+        # creating the rectangle with the desired mesurements
+        box = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+
+        # removing the last new line in the rectangle
+        box = box.strip('\n')
+        return (box)
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''
@@ -80,18 +84,16 @@ class Rectangle():
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        ''' Compare both rectangles and return the biggest based on area '''
         if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
+            raise TypeError('rect_1 must be an instance of Rectangle')
+        elif not isinstance(rect_2, Rectangle):
+            raise TypeError('rect_2 must be an instance of Rectangle')
 
-        area_1 = rect_1.area()
-        area_2 = rect_2.area()
-
-        if area_1 > area_2 or area_1 == area_2:
+        # Compare both rectangles. Return rect_1 if both are of the same area.
+        if rect_1.area() >= rect_2.area():
             return rect_1
-        elif area_2 > area_1:
-            return rect_2
+        return rect_2
 
     @classmethod
     def square(cls, size=0):

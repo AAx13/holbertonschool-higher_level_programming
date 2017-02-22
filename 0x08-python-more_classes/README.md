@@ -9,9 +9,13 @@
 * Your code should use the PEP 8 style.
 * All your files must be executable.
 * The length of your files will be tested using wc.
+* All your modules should have a documentation `(python3 -c               'print(__import__("my_module").__doc__)')`
+* All your classes should have a documentation `(python3 -c 'print(__import__("my_module").MyClass.__doc__)')`
+* All your functions (inside and outside a class) should have a documentation `(python3 -c 'print(__import__("my_module").my_function.__doc__)'` and `python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')`
+
 
 ## Modules
-An empty class Rectangle that defines a rectangle.
+An empty class `Rectangle` that defines a rectangle.
 * You are not allowed to import any module
 
 [0-rectangle.py](../0x08-python-more_classes/0-rectangle.py)

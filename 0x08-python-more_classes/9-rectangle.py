@@ -31,21 +31,19 @@ class Rectangle():
         type(self).number_of_instances += 1
 
     def __str__(self):
-        # Creating and returning a rectangle as a string
+        ''' Overload __str__ to print rectangle. '''
         if self.__width == 0 or self.__height == 0:
-            return ("")
-
-        # calling class attribute to select the right symbol
-        # creating the rectangle with the desired mesurements
-        box = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-
-        # removing the last new line in the rectangle
-        box = box.strip('\n')
-        return (box)
+            return ''
+        # Build a visual representation of the rectangle.
+        b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+        # Return the rectangle after stripping the trailing newline.
+        return (b.strip('\n'))
 
     def __repr__(self):
-        ''' Overload __repr__ to return string. '''
-        return("Rectangle(%d, %d)" % (self.__width, self.__height))
+        # returning a value as a string that can be used to rebuild a object
+        # return 'Rectangle({},{})'.format(self.__width, self.__height)
+        return "Rectangle("\
+            + str(self.__width) + ", " + str(self.__height) + ")"
 
     def __del__(self):
         ''' On delete print confirmation. '''

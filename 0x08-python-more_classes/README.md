@@ -1,4 +1,4 @@
-# More Classes and Objects Project ([@Holbertonschool](https://www.holbertonschool.com/))
+# More Classes and Objects Project ([@HolbertonSchool](https://www.holbertonschool.com/))
 
 ## Project Requirements
 * Allowed editors: `vi`, `vim`, `emacs`.

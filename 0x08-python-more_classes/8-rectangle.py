@@ -27,6 +27,7 @@ class Rectangle():
         ''' Constructor '''
         self.width = width
         self.height = height
+        type(self).number_of_instances += 1
 
     def __str__(self):
         ''' Overload __str__ to print rectangle. '''
@@ -44,6 +45,7 @@ class Rectangle():
     def __del__(self):
         ''' On delete print confirmation. '''
         print("Bye rectangle...")
+        type(self).number_of_instances -= 1
 
     @property
     def width(self):

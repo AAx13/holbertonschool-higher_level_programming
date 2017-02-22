@@ -31,9 +31,9 @@ class Rectangle():
         ''' Overload __str__ to print rectangle. '''
         if self.__width == 0 or self.__height == 0:
             return ''
-        derp = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        derp = derp.strip('\n')
-        return (derp)
+        build = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+        build = build.strip('\n')
+        return (build)
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''

@@ -93,7 +93,7 @@ class Rectangle():
 
     @classmethod
     def square(cls, size=0):
-        ''' Class method that returns a rectangle of equal width and height '''
+        # Returning a class instance with its parameters
         return (cls(size, size))
 
     def area(self):

@@ -48,21 +48,18 @@ class Rectangle():
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
 
-    # Getter for width
     @property
     def width(self):
+        ''' Getter '''
         return self.__width
 
-    # setter for width
     @width.setter
     def width(self, value):
-        # Checking if value is an integer
+        ''' Setter '''
         if isinstance(value, int):
-            # Checking if value is bigger than zero
             if value < 0:
                 raise ValueError('width must be >= 0')
-            else:
-                self.__width = value
+            self.__width = value
         else:
             raise TypeError('width must be an integer')
 

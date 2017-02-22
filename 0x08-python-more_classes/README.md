@@ -27,14 +27,14 @@ Write a class `Rectangle` that defines a rectangle by: (based on `0-rectangle.py
 * Property `def width(self):` to retrieve it
 * Property setter `def width(self, value):` to set it:
 
-⋅⋅⋅Width must be an integer, otherwise raise a TypeError exception with the message width must be an integer
-⋅⋅⋅If width is less than 0, raise a ValueError exception with the message width must be >= 0
+⋅⋅⋅Width must be an integer, otherwise raise a TypeError exception with the message width must be an integer⋅⋅
+⋅⋅⋅If width is less than 0, raise a ValueError exception with the message width must be >= 0⋅⋅
 * Private instance attribute: height:
 * Property def height(self): to retrieve it
 * Property setter def height(self, value): to set it:
 
-⋅⋅⋅Height must be an integer, otherwise raise a TypeError exception with the message height must be an integer
-⋅⋅⋅If height is less than 0, raise a ValueError exception with the message height must be >= 0
+⋅⋅⋅Height must be an integer, otherwise raise a TypeError exception with the message height must be an integer⋅⋅
+⋅⋅⋅If height is less than 0, raise a ValueError exception with the message height must be >= 0⋅⋅
 * Instantiation with optional width and height: def __init__(self, width=0, height=0):
 
 [1-rectangle.py](../0x08-python-more_classes/1-rectangle.py)

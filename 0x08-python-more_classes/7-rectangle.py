@@ -31,9 +31,9 @@ class Rectangle():
         ''' Overload __str__ to print rectangle. '''
         if self.__width == 0 or self.__height == 0:
             return ''
-        # Build a visual representation of the rectangle and return it clean of
-        # trailing newline.
+        # Build a visual representation of the rectangle
         b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+        # Return the rectangle after stripping the trailing newline.
         return (b.strip('\n'))
 
     def __repr__(self):

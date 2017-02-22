@@ -9,3 +9,8 @@
 * Your code should use the PEP 8 style.
 * All your files must be executable.
 * The length of your files will be tested using wc.
+
+## Modules
+An empty class Rectangle that defines a rectangle.
+* You are not allowed to import any module
+[0-rectangle.py](../0x08-python-more_classes/0-rectangle.py)

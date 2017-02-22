@@ -34,7 +34,8 @@ class Rectangle():
 
         # Building visual representation of the rectangle.
         build = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        build = build.strip('\n')  # Removing trailing newline.
+        # Removing trailing newline.
+        build = build.strip('\n')
         return(build)
 
     def __repr__(self):

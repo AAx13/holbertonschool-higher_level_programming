@@ -34,8 +34,8 @@ class Rectangle():
 
         # Building visual representation of the rectangle.
         build = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        clean = build.strip()  # Removing any unnecessary spaces or newlines.
-        return(clean)
+        build = build.strip()  # Removing any unnecessary spaces or newlines.
+        return(build)
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''

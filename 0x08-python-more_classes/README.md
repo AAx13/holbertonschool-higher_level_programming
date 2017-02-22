@@ -27,8 +27,8 @@ A class `Rectangle` that defines a rectangle by: (based on `0-rectangle.py`)
 * Property `def width(self):` to retrieve it
 * Property setter `def width(self, value):` to set it:
 
-        Width must be an integer, otherwise raise a TypeError exception with the message width must be an integer
-        If width is less than 0, raise a ValueError exception with the message width must be >= 0
+        ⋅⋅⋅Width must be an integer, otherwise raise a TypeError exception with the message width must be an integer.
+        ⋅⋅⋅If width is less than 0, raise a ValueError exception with the message width must be >= 0.
 
 * Private instance attribute: height:
 * Property def height(self): to retrieve it

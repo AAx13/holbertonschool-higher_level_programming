@@ -9,22 +9,12 @@ An empty class `Rectangle` that defines a rectangle.
 ***
 A class `Rectangle` that defines a rectangle by: (based on `0-rectangle.py`)
 
-* Private instance attribute: `width:`
-* Property `def width(self):` to retrieve it
-* Property setter `def width(self, value):` to set it:
-
-        Width must be an integer, otherwise raise a TypeError exception with the message width must be an integer.
-
-        If width is less than 0, raise a ValueError exception with the message width must be >= 0.
-
-* Private instance attribute: `height`:
-* Property `def height(self):` to retrieve it
-* Property setter `def height(self, value):` to set it:
-
-        Height must be an integer, otherwise raise a TypeError exception with the message height must be an integer
-
-        If height is less than 0, raise a ValueError exception with the message height must be >= 0
-
+* Private instance attribute: `width`.
+* Property `def width(self):` to retrieve it.
+* Property setter `def width(self, value):` to set it.
+* Private instance attribute: `height`.
+* Property `def height(self):` to retrieve it.
+* Property setter `def height(self, value):` to set it.
 * Instantiation with optional `width` and `height`: `def __init__(self, width=0, height=0):`
 
 [1-rectangle.py](../0x08-python-more_classes/1-rectangle.py)
@@ -33,9 +23,7 @@ A class `Rectangle` that defines a rectangle by: (based on `0-rectangle.py`)
 A class `Rectangle` that defines a rectangle by: (based on `1-rectangle.py`)
 
 * Public instance method: `def area(self):` that returns the rectangle area.
-* Public instance method: `def perimeter(self):` that returns the rectangle perimeter:
-
-        if width or height is equal to 0, perimeter is equal to 0.
+* Public instance method: `def perimeter(self):` that returns the rectangle perimeter.
 
 [2-rectangle.py](../0x08-python-more_classes/2-rectangle.py)
 
@@ -43,8 +31,6 @@ A class `Rectangle` that defines a rectangle by: (based on `1-rectangle.py`)
 A class `Rectangle` that defines a rectangle by: (based on `2-rectangle.py`)
 
 * `print()` and `str()` should print the rectangle with the character `#`:
-
-        If width or height is equal to 0, return an empty string.
 
 [3-rectangle.py](../0x08-python-more_classes/3-rectangle.py)
 
@@ -65,34 +51,21 @@ A class `Rectangle` that defines a rectangle by: (based on `4-rectangle.py`).
 ***
 A class `Rectangle` that defines a rectangle by: (based on `5-rectangle.py`)
 
-* Public class attribute `number_of_instances`:
-
-        Initialized to 0.
-        Incremented during each new instance instantiation.
-        Decremented during each instance deletion.
+* Public class attribute `number_of_instances`.
 
 [6-rectangle.py](../0x08-python-more_classes/6-rectangle.py)
 
 ***
 A class `Rectangle` that defines a rectangle by: (based on `6-rectangle.py`)
 
-* Public class attribute `print_symbol`:
-
-        Initialized to #.
-        Used as symbol for string representation.
-        Can be any type.
+* Public class attribute `print_symbol`.
 
 [7-rectangle.py](../0x08-python-more_classes/7-rectangle.py)
 
 ***
 A class `Rectangle` that defines a rectangle by: (based on `7-rectangle.py`)
 
-* Static method `def bigger_or_equal(rect_1, rect_2):` that returns the biggest rectangle:
-
-        rect_1 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_1 must be an instance of Rectangle.
-        rect_2 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_2 must be an instance of Rectangle.
-        Based on the area.
-        Returns rect_1 if both have the same area value.
+* Static method `def bigger_or_equal(rect_1, rect_2):` that returns the biggest rectangle.
 
 [8-rectangle.py](../0x08-python-more_classes/8-rectangle.py)
 

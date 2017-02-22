@@ -11,6 +11,7 @@ __repr__() - Returns string representation of the rectangle
 to be able to recreate a new instance by using eval().
 __del__() - Print confirmation upon successful deletion of an object.
 bigger_or_equal() - Compare and return the biggest rectangle based
+square() - Class method that returns a rectangle of equal width and height.
 on area. Return first rectangle if they're of the same area.
 area() - Returns the rectangle area.
 perimeter() - Returns the rectangle perimeter.
@@ -82,6 +83,11 @@ class Rectangle():
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        ''' Class method that returns a rectangle of equal width and height '''
+        return (cls(size, size))
 
     def area(self):
         ''' Returns the rectangle area '''

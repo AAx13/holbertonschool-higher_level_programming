@@ -20,6 +20,9 @@ perimeter() - Returns the rectangle perimeter.
 class Rectangle():
     '''class Rectangle - Parameters(width(int), height(int))'''
 
+    number_of_instances = 0  # Count instances created and deleted
+    print_symbol = '#'  # Symbol for string representation
+
     def __init__(self, width=0, height=0):
         ''' Constructor '''
         self.width = width
@@ -29,7 +32,8 @@ class Rectangle():
         ''' Overload __str__ to print rectangle. '''
         if self.__width == 0 or self.__height == 0:
             return ''
-        return(('#' * self.__width + '\n') * self.__height).strip()
+        b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+        return (b.strip('\n'))
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''

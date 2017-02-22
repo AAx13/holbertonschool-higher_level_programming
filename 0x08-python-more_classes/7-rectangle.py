@@ -32,7 +32,7 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return ''
         b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        return (b.split('\n'))
+        return (b.strip('\n'))
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''

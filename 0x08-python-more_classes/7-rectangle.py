@@ -32,9 +32,10 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return ''
 
-        # Removing any unnecessary spaces or newlines while parsing each line.
-        clean = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        return(clean.strip())
+        # Building visual representation of the rectangle.
+        build = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+        clean = build.strip()  # Removing any unnecessary spaces or newlines.
+        return(clean)
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''

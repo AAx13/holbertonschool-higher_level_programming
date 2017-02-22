@@ -30,11 +30,6 @@ class Rectangle():
         self.height = height
         type(self).number_of_instances += 1
 
-    @classmethod
-    def square(cls, size=0):
-        ''' Class method that returns a rectangle of equal width and height '''
-        return (cls(size, size))
-
     def __str__(self):
         ''' Overload __str__ to print rectangle. '''
         if self.__width == 0 or self.__height == 0:
@@ -53,18 +48,21 @@ class Rectangle():
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
 
+    # Getter for width
     @property
     def width(self):
-        ''' Getter '''
         return self.__width
 
+    # setter for width
     @width.setter
     def width(self, value):
-        ''' Setter '''
+        # Checking if value is an integer
         if isinstance(value, int):
+            # Checking if value is bigger than zero
             if value < 0:
                 raise ValueError('width must be >= 0')
-            self.__width = value
+            else:
+                self.__width = value
         else:
             raise TypeError('width must be an integer')
 
@@ -95,6 +93,11 @@ class Rectangle():
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        ''' Class method that returns a rectangle of equal width and height '''
+        return (cls(size, size))
 
     def area(self):
         ''' Returns the rectangle area '''

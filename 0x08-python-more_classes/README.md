@@ -44,7 +44,7 @@ A class `Rectangle` that defines a rectangle by: (based on `0-rectangle.py`)
 [1-rectangle.py](../0x08-python-more_classes/1-rectangle.py)
 
 ***
-A class Rectangle that defines a rectangle by: (based on `1-rectangle.py`)
+A class `Rectangle` that defines a rectangle by: (based on `1-rectangle.py`)
 
 * Public instance method: `def area(self):` that returns the rectangle area.
 * Public instance method: `def perimeter(self):` that returns the rectangle perimeter:

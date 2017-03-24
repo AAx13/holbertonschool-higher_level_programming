@@ -40,8 +40,8 @@ class Rectangle():
         return (rect.rstrip())
 
     def __repr__(self):
-        ''' Overload __repr__ to return string. '''
-        return("Rectangle(%d, %d)" % (self.__width, self.__height))
+        '''to stringify #/'s that represent the rectangle'''
+        return ("Rectangle(%s, %s)" % (str(self.__width), str(self.__height)))
 
     def __del__(self):
         ''' On delete print confirmation. '''

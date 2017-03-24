@@ -65,18 +65,18 @@ class Rectangle():
 
     @property
     def height(self):
-        ''' Getter '''
-        return self.__height
+        '''height getter'''
+        return (self.__height)
 
     @height.setter
     def height(self, value):
-        ''' Setter '''
-        if isinstance(value, int):
-            if value < 0:
-                raise ValueError('height must be >= 0')
-            self.__height = value
+        '''making sure the height is a positive integer'''
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
         else:
-            raise TypeError('height must be an integer')
+            self.__height = value
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):

@@ -44,9 +44,9 @@ class Rectangle():
         return ("Rectangle(%s, %s)" % (str(self.__width), str(self.__height)))
 
     def __del__(self):
-        ''' On delete print confirmation. '''
-        print("Bye rectangle...")
+        '''to delete the instance'''
         type(self).number_of_instances -= 1
+        print("Bye rectangle...")
 
     @property
     def width(self):

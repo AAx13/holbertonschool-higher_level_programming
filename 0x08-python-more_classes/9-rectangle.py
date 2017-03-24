@@ -41,7 +41,7 @@ class Rectangle():
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''
-        return("Rectangle(%d, %d)" % (self.__width, (self.__height))
+        return("Rectangle(%d, %d)" % (self.__width, self.__height))
 
     def __del__(self):
         ''' On delete print confirmation. '''
@@ -59,7 +59,7 @@ class Rectangle():
         if isinstance(value, int):
             if value < 0:
                 raise ValueError('width must be >= 0')
-            self.__width=value
+            self.__width = value
         else:
             raise TypeError('width must be an integer')
 
@@ -74,7 +74,7 @@ class Rectangle():
         if isinstance(value, int):
             if value < 0:
                 raise ValueError('height must be >= 0')
-            self.__height=value
+            self.__height = value
         else:
             raise TypeError('height must be an integer')
 

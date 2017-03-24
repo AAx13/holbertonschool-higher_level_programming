@@ -31,13 +31,13 @@ class Rectangle():
         type(self).number_of_instances += 1
 
     def __str__(self):
-        ''' Overload __str__ to print rectangle. '''
+        '''to print #/'s that represent the rectangle'''
         if self.__width == 0 or self.__height == 0:
-            return ''
-        # Build a visual representation of the rectangle.
-        b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        # Return the rectangle after stripping the trailing newline.
-        return (b.strip('\n'))
+            return ("")
+        rect = ""
+        for i in range(self.__height):
+            rect += (str(self.print_symbol) * self.__width) + "\n"
+        return (rect.rstrip())
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''
@@ -70,13 +70,13 @@ class Rectangle():
 
     @height.setter
     def height(self, value):
-        '''making sure the height is a positive integer'''
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        else:
+        ''' Setter '''
+        if isinstance(value, int):
+            if value < 0:
+                raise ValueError('height must be >= 0')
             self.__height = value
+        else:
+            raise TypeError('height must be an integer')
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):

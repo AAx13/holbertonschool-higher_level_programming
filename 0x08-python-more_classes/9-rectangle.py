@@ -44,9 +44,9 @@ class Rectangle():
         return("Rectangle(%d, %d)" % (self.__width, self.__height))
 
     def __del__(self):
-        '''to delete the instance'''
-        type(self).number_of_instances -= 1
+        ''' On delete print confirmation. '''
         print("Bye rectangle...")
+        type(self).number_of_instances -= 1
 
     @property
     def width(self):
@@ -93,15 +93,15 @@ class Rectangle():
 
     @classmethod
     def square(cls, size=0):
-        ''' Class method that returns a rectangle of equal width and height '''
-        return (cls(size, size))
+        '''returns a rectangle that is a square'''
+        return (Rectangle(size, size))
 
     def area(self):
-        ''' Returns the rectangle area '''
-        return self.__width * self.__height
+        '''returns the rectangle's area'''
+        return (self.__width * self.__height)
 
     def perimeter(self):
-        ''' Returns the rectangle perimeter. '''
+        '''returns the rectangle's perimeter'''
         if self.__width == 0 or self.__height == 0:
             return 0
-        return (self.__width * 2) + (self.__height * 2)
+        return ((self.__width * 2) + (self.__height * 2))

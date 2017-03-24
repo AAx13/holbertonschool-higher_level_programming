@@ -55,13 +55,13 @@ class Rectangle():
 
     @width.setter
     def width(self, value):
-        '''width setter'''
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
-        else:
+        ''' Setter '''
+        if isinstance(value, int):
+            if value < 0:
+                raise ValueError('width must be >= 0')
             self.__width = value
+        else:
+            raise TypeError('width must be an integer')
 
     @property
     def height(self):
@@ -70,13 +70,13 @@ class Rectangle():
 
     @height.setter
     def height(self, value):
-        ''' Setter '''
-        if isinstance(value, int):
-            if value < 0:
-                raise ValueError('height must be >= 0')
-            self.__height = value
+        '''making sure the height is a positive integer'''
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
         else:
-            raise TypeError('height must be an integer')
+            self.__height = value
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):

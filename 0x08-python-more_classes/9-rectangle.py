@@ -31,13 +31,13 @@ class Rectangle():
         type(self).number_of_instances += 1
 
     def __str__(self):
-        ''' Overload __str__ to print rectangle. '''
+        '''to print #/'s that represent the rectangle'''
         if self.__width == 0 or self.__height == 0:
-            return ''
-        # Build a visual representation of the rectangle.
-        b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        # Return the rectangle after stripping the trailing newline.
-        return (b.strip('\n'))
+            return ("")
+        rect = ""
+        for i in range(self.__height):
+            rect += (str(self.print_symbol) * self.__width) + "\n"
+        return (rect.rstrip())
 
     def __repr__(self):
         ''' Overload __repr__ to return string. '''
@@ -94,7 +94,7 @@ class Rectangle():
     @classmethod
     def square(cls, size=0):
         ''' Class method that returns a rectangle of equal width and height '''
-        return (Rectangle(size, size))
+        return (cls(size, size))
 
     def area(self):
         ''' Returns the rectangle area '''

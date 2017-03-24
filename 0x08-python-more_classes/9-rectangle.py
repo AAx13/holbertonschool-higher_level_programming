@@ -11,6 +11,10 @@ __repr__() - Returns string representation of the rectangle
 to be able to recreate a new instance by using eval().
 __del__() - Print confirmation upon successful deletion of an object.
 bigger_or_equal() - Compare and return the biggest rectangle based
+square() - Class method that returns a rectangle of equal width and height.
+on area. Return first rectangle if they're of the same area.
+area() - Returns the rectangle area.
+perimeter() - Returns the rectangle perimeter.
 '''
 
 
@@ -25,24 +29,6 @@ class Rectangle():
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
-
-    def __str__(self):
-        ''' Overload __str__ to print rectangle. '''
-        if self.__width == 0 or self.__height == 0:
-            return ''
-        # Build a visual representation of the rectangle.
-        b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
-        # Return the rectangle after stripping the trailing newline.
-        return (b.strip('\n'))
-
-    def __repr__(self):
-        ''' Overload __repr__ to return string. '''
-        return("Rectangle(%d, %d)" % (self.__width, self.__height))
-
-    def __del__(self):
-        ''' On delete print confirmation. '''
-        print("Bye rectangle...")
-        type(self).number_of_instances -= 1
 
     @property
     def width(self):
@@ -86,6 +72,24 @@ class Rectangle():
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
+
+    def __str__(self):
+        ''' Overload __str__ to print rectangle. '''
+        if self.__width == 0 or self.__height == 0:
+            return ''
+        # Build a visual representation of the rectangle.
+        b = ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+        # Return the rectangle after stripping the trailing newline.
+        return (b.strip('\n'))
+
+    def __repr__(self):
+        ''' Overload __repr__ to return string. '''
+        return("Rectangle(%d, %d)" % (self.__width, self.__height))
+
+    def __del__(self):
+        ''' On delete print confirmation. '''
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1
 
     @classmethod
     def square(cls, size=0):
